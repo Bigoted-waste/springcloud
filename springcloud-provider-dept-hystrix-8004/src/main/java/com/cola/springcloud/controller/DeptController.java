@@ -26,7 +26,7 @@ public class DeptController {
 
     @GetMapping("/dept/query/{id}")
     @HystrixCommand(fallbackMethod = "hystrixGet")
-    public Dept get(@PathVariable("id") Long id){
+    public Dept query(@PathVariable("id") Long id){
         Dept dept = deptService.queryById(id);
 
         if(dept==null){
