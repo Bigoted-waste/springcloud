@@ -11,10 +11,10 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Component
-@FeignClient(value = "SPRINGCLOUD-PROVIDER-DEPT")
+@FeignClient(value = "SPRINGCLOUD-PROVIDER-DEPT",fallbackFactory = DeptClientServiceFallbackFactory.class) //
 public interface DeptClientService {
 
-    @GetMapping("/dept/get/{id}")
+    @GetMapping("/dept/query/{id}")
     Dept queryById(@PathVariable("id") Long id);
 
     @GetMapping("/dept/list")
@@ -22,4 +22,6 @@ public interface DeptClientService {
 
     @GetMapping("/dept/add")
     boolean addDept(Dept dept);
+
+
 }

@@ -3,6 +3,7 @@ package com.cola.springcloud.controller;
 
 import com.cola.springcloud.pojo.Dept;
 import com.cola.springcloud.service.DeptService;
+import com.netflix.discovery.DiscoveryManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -57,5 +58,13 @@ public class DeptController {
             );
         }
         return this.client;
+    }
+
+    /**
+     * 剔除服务
+     */
+    @GetMapping("/dept/delete")
+    public void deleteDemo(){
+        DiscoveryManager.getInstance().shutdownComponent(); //剔除服务
     }
 }
