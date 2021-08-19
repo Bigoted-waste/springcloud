@@ -10,6 +10,7 @@ public class ColaRule {
 
     @Bean
     public IRule myRule(){
-        return new ColaRandomRule();    //默认是论询，现在我们自定义为 ColaRandomRule
+        return new RandomRule();
+//        return new ColaRandomRule();    //默认是论询，现在我们自定义为 ColaRandomRule
     }
 }

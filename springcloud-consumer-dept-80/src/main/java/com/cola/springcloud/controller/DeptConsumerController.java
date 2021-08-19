@@ -29,7 +29,7 @@ public class DeptConsumerController {
 
     @RequestMapping("/consumer/dept/query/{id}")
     public Dept query(@PathVariable("id") Long id){
-        return restTemplate.getForObject(REST_URL_PREFIX+"/dept/query"+id,Dept.class);
+        return restTemplate.getForObject(REST_URL_PREFIX+"/dept/query/"+id,Dept.class);
     }
 
     @RequestMapping("/consumer/dept/list")
