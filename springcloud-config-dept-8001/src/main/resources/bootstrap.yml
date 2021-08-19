@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8899
+      name: config-dept #需要从github上读取的资源名称，不要后缀
+      profile: dev
+      label: master
