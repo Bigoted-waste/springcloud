@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Component
-@FeignClient(value = "SPRINGCLOUD-PROVIDER-DEPT",fallbackFactory = DeptClientServiceFallbackFactory.class) //
+@FeignClient(value = "SPRINGCLOUD-CONFIG-TEST",fallbackFactory = DeptClientServiceFallbackFactory.class) //
 public interface DeptClientService {
 
     @GetMapping("/dept/query/{id}")
